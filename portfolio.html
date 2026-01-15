@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandu Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1f22, #2a2d31);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: #2c2f33;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+            filter: drop-shadow(0 0 10px #000);
+            animation: popIn 0.8s ease-in-out;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: bold;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            animation: slideDown 0.8s ease-in-out;
+        }
+
+        /* Startscherm */
+        #startScreen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 75vh;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        #startScreen h1 {
+            font-size: 34px;
+            margin-bottom: 25px;
+            font-weight: 600;
+            animation: slideUp 0.8s ease-in-out;
+        }
+
+        .menuButton, .backButton {
+            background: #5865f2;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            color: white;
+            transition: 0.25s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        }
+
+        .menuButton:hover, .backButton:hover {
+            background: #4752c4;
+            transform: translateY(-4px);
+            box-shadow: 0 0 15px #5865f2;
+        }
+
+        /* Content boxen */
+        .contentBox {
+            display: none;
+            background: #2c2f33;
+            padding: 30px;
+            margin: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: sectionFade 0.6s ease-out;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            border-left: 5px solid #5865f2;
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #2c2f33;
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Animaties */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Zachte sectie animatie */
+        @keyframes sectionFade {
+            0% {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="one piece logo.jpg" alt="One Piece Logo">
+    <div class="name">Mandu Ismail</div>
+</header>
+
+<!-- STARTSCHERM -->
+<div id="startScreen">
+    <h1>Welkom! Wat wilt u bekijken?</h1>
+
+    <button class="menuButton" onclick="showSection('overMij')">Over mij</button>
+    <button class="menuButton" onclick="showSection('software')">Softwarevaardigheden</button>
+    <button class="menuButton" onclick="showSection('projecten')">Projecten</button>
+    <button class="menuButton" onclick="showSection('stage')">Wat ik wil leren</button>
+    <button class="menuButton" onclick="showSection('contact')">Contact</button>
+</div>
+
+<!-- SECTIES -->
+
+<div id="overMij" class="contentBox">
+    <h2>Over mij</h2>
+    <p>Mijn naam is Mandu en ik word op 1 februari 18 jaar. Ik volg de opleiding Software Developer op MBO niveau 4. Ik ben iemand die graag experimenteert met technologie en het leuk vindt om problemen op te lossen door te bouwen, testen en verbeteren.</p>
+    <p>Ik werk graag praktisch en ik vind het interessant om te ontdekken hoe software en hardware elkaar kunnen versterken. Daarom zoek ik een stageplek waar ik mezelf verder kan ontwikkelen in een professionele technische omgeving — en NIOZ Texel past daar perfect bij.</p>
+
+    <button class="backButton" onclick="goBack()">Terug</button>
+</div>
+
+<div id="software" class="contentBox">
+    <h2>Vaardigheden – Softwareontwikkeling</h2>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Arduino Uno</li>
+        <li>Microsoft Micro:bit (MakeCode / Python / JavaScript)</li>
+        <li>phpMyAdmin</li>
+        <li>Ubuntu</li>
+        <li>Microsoft Hyper‑V</li>
+    </ul>
+
+    <button class="backButton" onclick="goBack()">Terug</button>
+</div>
+
+<div id="projecten" class="contentBox">
+    <h2>Projecten en opdrachten</h2>
+    <p><strong>Websiteprojecten:</strong> Ik heb verschillende websites gebouwd, variërend van simpele informatieve pagina’s tot meer uitgebreide opdrachten met HTML, CSS en JavaScript. Hierbij heb ik geleerd hoe je een website logisch opbouwt, vormgeving toepast en interactie toevoegt.</p>
+
+    <p><strong>Arduino‑projecten:</strong> Werken met sensoren, leds en prototypes heeft mij inzicht gegeven in hoe software en hardware samenwerken.</p>
+
+    <p><strong>Micro:bit opdrachten:</strong> Kleine games, sensortoepassingen en communicatie tussen microbits hebben mij geholpen om logica en input/output beter te begrijpen.</p>
+
+    <p><strong>Hardware & netwerk:</strong> Netwerkkabels maken, hardware aansluiten en problemen oplossen vind ik leuk omdat je direct resultaat ziet.</p>
+
+    <button class="backButton" onclick="goBack()">Terug</button>
+</div>
+
+<div id="stage" class="contentBox">
+    <h2>Wat ik wil leren tijdens mijn stage</h2>
+    <ul>
+        <li>Professioneel programmeren in een echte werkomgeving</li>
+        <li>Werken met hardware en technische systemen</li>
+        <li>Data verwerken en analyseren</li>
+        <li>Samenwerken in een technisch team</li>
+        <li>Beter worden in documenteren en rapporteren</li>
+    </ul>
+
+    <button class="backButton" onclick="goBack()">Terug</button>
+</div>
+
+<div id="contact" class="contentBox">
+    <h2>Contactgegevens</h2>
+    <p><strong>Naam:</strong> Mandu</p>
+    <p><strong>Leeftijd:</strong> 18 (vanaf 1 februari)</p>
+    <p><strong>Opleiding:</strong> MBO 4 Software Developer</p>
+    <p><strong>E‑mail:</strong> hannan.ismail@student.vonknh.nl / Hannanismail08@gmail.com</p>
+    <p><strong>Telefoonnummer:</strong> 0622191600</p>
+    <p><strong>Woonplaats:</strong> Den Helder</p>
+    <p><strong>Adres:</strong> Beerzestraat 24, 1784 EV</p>
+
+    <button class="backButton" onclick="goBack()">Terug</button>
+</div>
+
+<footer>
+    ©2026 Mandu.
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        document.getElementById("startScreen").style.display = "none";
+
+        let sections = document.querySelectorAll(".contentBox");
+        sections.forEach(sec => {
+            sec.style.display = "none";
+            sec.style.animation = "none"; 
+        });
+
+        let active = document.getElementById(sectionId);
+        active.style.display = "block";
+
+        setTimeout(() => {
+            active.style.animation = "sectionFade 0.6s ease-out";
+        }, 10);
+    }
+
+    function goBack() {
+        let sections = document.querySelectorAll(".contentBox");
+        sections.forEach(sec => sec.style.display = "none");
+
+        document.getElementById("startScreen").style.display = "flex";
+    }
+</script>
+
+</body>
+</html>
